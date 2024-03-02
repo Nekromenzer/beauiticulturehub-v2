@@ -13,7 +13,7 @@ export default function AuthorCard({ author }) {
             <Link href={`/author/${author.slug.current}`}>
               <Image
                 src={imageProps.src}
-                alt={author.name}
+                alt='avatar'
                 className="rounded-full object-cover"
                 fill
                 sizes="96px"
