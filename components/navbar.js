@@ -20,10 +20,6 @@ export default function Navbar(props) {
       label: "About",
       href: "/about"
     },
-    {
-      label: "Contact",
-      href: "/contact"
-    }
   ];
 
   const rightmenu = [
@@ -32,16 +28,20 @@ export default function Navbar(props) {
       href: "/archive"
     },
     {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
-      badge: "new"
-    },
-    {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-      external: true
+      label: "Contact",
+      href: "/contact"
     }
+    // {
+    //   label: "Pro Version",
+    //   href: "https://stablo-pro.web3templates.com/",
+    //   external: true,
+    //   badge: "new"
+    // },
+    // {
+    //   label: "Download",
+    //   href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
+    //   external: true
+    // }
   ];
 
   const mobilemenu = [...leftmenu, ...rightmenu];
