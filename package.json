@@ -15,6 +15,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@magicul/next-google-tag-manager": "^2.0.0",
     "@portabletext/react": "^3.0.11",
     "@sanity/code-input": "^4.1.2",
     "@sanity/icons": "^2.8.0",
