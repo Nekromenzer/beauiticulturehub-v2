@@ -24,7 +24,7 @@ export default function About({ authors, settings }) {
                 {imageProps && (
                   <Image
                     src={imageProps?.src}
-                    alt={author?.name || " "}
+                    alt='avatar'
                     fill
                     sizes="(max-width: 320px) 100vw, 320px"
                     className="object-cover"
