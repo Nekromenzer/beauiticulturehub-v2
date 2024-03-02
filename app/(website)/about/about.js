@@ -24,7 +24,7 @@ export default function About({ authors, settings }) {
                 {imageProps && (
                   <Image
                     src={imageProps?.src}
-                    alt='avatar'
+                    alt="avatar"
                     fill
                     sizes="(max-width: 320px) 100vw, 320px"
                     className="object-cover"
@@ -38,14 +38,25 @@ export default function About({ authors, settings }) {
 
       <div className="prose mx-auto mt-14 text-center dark:prose-invert">
         <p>
-        Welcome to Beauiticulturehub, your ultimate destination for all things beauty! Dive into a world of expert insights, practical tips, and transformative tutorials designed to enhance your beauty journey.
-
-        At Beauiticulturehub, we're passionate about empowering beauty enthusiasts with the knowledge and tools they need to look and feel their best. From skincare secrets to makeup mastery and haircare hacks, our blog covers a wide range of topics to cater to every aspect of your beauty routine.
+          Welcome to Beauiticulturehub, your ultimate destination for
+          all things beauty! Dive into a world of expert insights,
+          practical tips, and transformative tutorials designed to
+          enhance your beauty journey. At Beauiticulturehub,
+          we&lsquo;re passionate about empowering beauty enthusiasts
+          with the knowledge and tools they need to look and feel
+          their best. From skincare secrets to makeup mastery and
+          haircare hacks, our blog covers a wide range of topics to
+          cater to every aspect of your beauty routine.
         </p>
         <p>
-        Discover the latest beauty trends, product reviews, and industry insights curated by our team of beauty experts. Whether you're a beauty novice or a seasoned pro, Beauiticulturehub is your go-to resource for all your beauty needs.
-
-Unlock your beauty potential and join our community of like-minded individuals on a journey to radiant confidence. Let Beauiticulturehub be your trusted companion in your pursuit of beauty excellence.
+          Discover the latest beauty trends, product reviews, and
+          industry insights curated by our team of beauty experts.
+          Whether you&lsquo;re a beauty novice or a seasoned pro,
+          Beauiticulturehub is your go-to resource for all your beauty
+          needs. Unlock your beauty potential and join our community
+          of like-minded individuals on a journey to radiant
+          confidence. Let Beauiticulturehub be your trusted companion
+          in your pursuit of beauty excellence.
         </p>
         <p>
           <Link href="/contact">Get in touch</Link>
