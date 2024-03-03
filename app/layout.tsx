@@ -2,7 +2,7 @@ import "@/styles/tailwind.css";
 import { Providers } from "./providers";
 import { cx } from "@/utils/all";
 import { Inter, Lora } from "next/font/google";
-import GoogleTagManager from "@magicul/next-google-tag-manager";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,9 +25,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cx(inter.variable, lora.variable)}>
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
-        <GoogleTagManager id="G-REDACTED" />
         <Providers>{children}</Providers>
       </body>
+      <GoogleAnalytics gaId="G-REDACTED" />
     </html>
   );
 }
