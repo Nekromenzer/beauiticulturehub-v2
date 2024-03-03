@@ -2,7 +2,7 @@ import "@/styles/tailwind.css";
 import { Providers } from "./providers";
 import { cx } from "@/utils/all";
 import { Inter, Lora } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
         <Providers>{children}</Providers>
       </body>
-      <GoogleTagManager gtmId="GTM-NZKCF5M3" />
+      <GoogleAnalytics gaId="G-REDACTED" />
     </html>
   );
 }
