@@ -18,6 +18,10 @@ export default function Layout(props) {
       <Head>
         <link rel="preconnect" href="https://cdn.sanity.io/" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io//" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-REDACTED"
+          crossorigin="anonymous"></script>
       </Head>
       <NextSeo
         title={props.title}
@@ -47,7 +51,7 @@ export default function Layout(props) {
       <div
         className={cx(
           props?.fontStyle,
-          "antialiased text-gray-800 dark:bg-black dark:text-gray-400"
+          "text-gray-800 antialiased dark:bg-black dark:text-gray-400"
         )}>
         {props.alternate ? (
           <NavbarAlt {...props} />
