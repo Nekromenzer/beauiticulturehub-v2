@@ -5,7 +5,6 @@ import { urlForImage } from "@/lib/sanity/image";
 import Navbar from "@/components/navbar";
 import NavbarAlt from "@/components/navbaralt";
 import { cx } from "@/utils/all";
-import Script from "next/script";
 // import defaultOG from "../public/img/og-default.jpg";
 
 import Footer from "@/components/footer";
@@ -19,15 +18,6 @@ export default function Layout(props) {
       <Head>
         <link rel="preconnect" href="https://cdn.sanity.io/" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io//" />
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-REDACTED"
-        />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-REDACTED"
-          crossorigin="anonymous"
-        />
       </Head>
       <NextSeo
         title={props.title}
