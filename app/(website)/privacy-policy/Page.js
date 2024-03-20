@@ -1,5 +1,5 @@
-import About from "./about";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 export default async function AboutPage() {
-  return <About />;
+  return <PrivacyPolicy />;
 }
