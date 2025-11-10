@@ -15,6 +15,74 @@ const lora = Lora({
   variable: "--font-lora"
 });
 
+export const metadata = {
+  metadataBase: new URL("https://beauiticulturehub.com"),
+  title: {
+    default:
+      "Beauiticulturehub - Beauty Tips, Trends & Expert Advice",
+    template: "%s | Beauiticulturehub"
+  },
+  description:
+    "Discover expert beauty insights, skincare secrets, makeup tutorials, and haircare tips at Beauiticulturehub. Your ultimate destination for beauty transformation.",
+  keywords: [
+    "beauty blog",
+    "skincare tips",
+    "makeup tutorials",
+    "haircare advice",
+    "beauty trends",
+    "cosmetics",
+    "beauty products"
+  ],
+  authors: [
+    {
+      name: "Beauiticulturehub Team",
+      url: "https://beauiticulturehub.com"
+    }
+  ],
+  creator: "Beauiticulturehub",
+  publisher: "Beauiticulturehub",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://beauiticulturehub.com",
+    siteName: "Beauiticulturehub",
+    title: "Beauiticulturehub - Beauty Tips, Trends & Expert Advice",
+    description:
+      "Discover expert beauty insights, skincare secrets, makeup tutorials, and haircare tips.",
+    images: [
+      {
+        url: "/img/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Beauiticulturehub"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beauiticulturehub - Beauty Tips & Expert Advice",
+    description:
+      "Your ultimate destination for beauty transformation",
+    images: ["/img/og-default.jpg"]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  }
+};
+
 export default function RootLayout({
   children
 }: {

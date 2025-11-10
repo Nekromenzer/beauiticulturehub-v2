@@ -5,6 +5,10 @@ import { notFound } from "next/navigation";
 import { PortableText } from "@/lib/sanity/plugins/portabletext";
 import { urlForImage } from "@/lib/sanity/image";
 import { parseISO, format } from "date-fns";
+import {
+  ArticleJsonLd,
+  BreadcrumbJsonLd
+} from "@/components/structureData";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
@@ -18,6 +22,8 @@ export default function Post(props) {
     notFound();
   }
 
+  const postUrl = `https://beauiticulturehub.com/post/${slug.current}`;
+
   const imageProps = post?.mainImage
     ? urlForImage(post?.mainImage)
     : null;
@@ -28,6 +34,16 @@ export default function Post(props) {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://beauiticulturehub.com" },
+          {
+            name: post.categories[0]?.title,
+            url: `https://beauiticulturehub.com/category/${post.categories[0]?.slug?.current}`
+          },
+          { name: post.title, url: postUrl }
+        ]}
+      />
       <Container className="!pt-0">
         <div className="mx-auto max-w-screen-md ">
           <div className="flex justify-center">
