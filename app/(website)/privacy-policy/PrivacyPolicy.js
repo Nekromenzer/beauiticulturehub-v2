@@ -1,6 +1,7 @@
 import React from "react";
 
 const PrivacyPolicy = () => {
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
   return (
     <div>
       <h1>Privacy Policy</h1>
@@ -549,7 +550,15 @@ const PrivacyPolicy = () => {
         contact us:
       </p>
       <ul>
-        <li>By email: contact@example.invalid</li>
+        <li>
+          {contactEmail ? (
+            <>
+              By email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </>
+          ) : (
+            <a href="/contact">Through our contact page</a>
+          )}
+        </li>
       </ul>
     </div>
   );

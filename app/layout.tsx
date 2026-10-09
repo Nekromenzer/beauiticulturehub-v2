@@ -88,21 +88,26 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const analyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+  const adsenseClientId = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID;
+
   return (
     <html
       lang="en"
       suppressHydrationWarning
       className={cx(inter.variable, lora.variable)}>
       <body className="text-gray-800 antialiased dark:bg-black dark:text-gray-400">
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-REDACTED"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
+        {adsenseClientId ? (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
+            strategy="lazyOnload"
+            crossOrigin="anonymous"
+          />
+        ) : null}
         <Providers>{children}</Providers>
       </body>
-      <GoogleAnalytics gaId="G-REDACTED" />
+      {analyticsId ? <GoogleAnalytics gaId={analyticsId} /> : null}
     </html>
   );
 }

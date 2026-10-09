@@ -24,14 +24,32 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env
-.env.local
-.env.development
-.env.development.local
-.env.test.local
-.env.production
-.env.production.local
+# Environment files (only blank examples may be committed)
+.env*
+!.env.example
+!.env.local.example
+
+# Credentials and private keys
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+.npmrc
+.netrc
+credentials*.json
+*service-account*.json
+*serviceAccount*.json
+
+# Private CMS exports and backups
+/lib/sanity/data/
+/backups/
+*.tar.gz
+*.tgz
+*.sql
+*.sqlite
+*.sqlite3
+*.db
 
 # vercel
 .vercel

@@ -1,3 +1,25 @@
+## Local configuration and privacy
+
+Copy `.env.local.example` to `.env.local` and configure your own Sanity project.
+Environment files, private keys, and CMS backups are ignored by Git. Never put
+secret tokens in variables beginning with `NEXT_PUBLIC_` or `SANITY_STUDIO_`.
+
+Analytics, AdSense (including `/ads.txt`), and the privacy-policy contact email
+use the optional environment variables in the example file. Configure these in
+your deployment environment to retain those integrations. Without them, analytics
+and advertising are disabled and the policy links to the contact page.
+
+Before pushing, scan the working directory and every branch with Gitleaks:
+
+```sh
+gitleaks dir . --redact=100 --max-archive-depth=3
+gitleaks git . --log-opts=--all --redact=100 --max-archive-depth=3
+```
+
+If a credential is exposed, revoke or rotate it with its provider. Deleting a file
+or rewriting Git history does not revoke credentials or erase other people's copies.
+After a history cleanup, clone the repository again instead of merging old history.
+
 # Stablo Blog Template - Next.js & Sanity CMS
 
 Stablo is a JAMStack Blog template built with Next.js, Tailwind CSS & Sanity CMS by [Web3Templates](https://web3templates.com/). It comes with free & pro version.
@@ -115,31 +137,11 @@ pnpm install
 
 We prefer `pnpm` to save your disk space.
 
-## Step 3: Import Demo Data (Optional)
+## Step 3: Configure your own content
 
-To look like what you have seen in the demo, with all the content and images, follow the below steps:
-
-1. if you have not installed `@sanity/cli` install it globally first.
-
-```bash
-npm install -g @sanity/cli
-# or
-pnpm install -g @sanity/cli
-```
-
-Then login to sanity using `sanity login` command
-
-```
-sanity login
-```
-
-Now, you will be able to import demo content by running the `sanity-import` command. The files are located at `/lib/sanity/data/production.tar.gz` and will load automatically by running the below command.
-
-```bash
-npm run sanity-import
-# or
-pnpm sanity-import
-```
+CMS exports and production backups are intentionally excluded from this repository.
+Create content in your own Sanity project. Keep any dataset exports outside this
+repository; do not commit customer data, draft content, or asset metadata.
 
 ## Step 4: Finish it up!
 
